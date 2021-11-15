@@ -1,24 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Tilemap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/NormalBox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Projectile/Projectile.tscn" type="PackedScene" id=3]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Tilemap" parent="." instance=ExtResource( 2 )]
+[node name="NormalBox" parent="." instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393216, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458757, 0, 0, 458758, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144.634, 449.039 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 66.0
-margin_top = 69.0
-margin_right = 243.0
-margin_bottom = 161.0
-text = "Arrow keys to move
-Space to Jump
-Hold space to jump higher"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Projectile" parent="." instance=ExtResource( 3 )]
+position = Vector2( -51.449, -21.9897 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
